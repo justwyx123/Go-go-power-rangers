@@ -11,6 +11,7 @@ print ("""[N]ew Game
 [E]xit Game""")
 
 chosenMenu = str(input("Choose menu option: "))
+userTeam = []
 if chosenMenu=="N":
     print ("Choose your game mode:")
     print ("[1] Player vs AI")
@@ -32,6 +33,9 @@ if chosenMenu=="N":
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your character:"))
+                finalPlayers = player1unit1
+                userTeam.append (finalPlayers)
+
         elif numberOfUnits==2:
                 print ("Choose units for your team")
                 print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
@@ -53,6 +57,9 @@ if chosenMenu=="N":
                     else:
                         player1unit2 = "Mage"
                 player1unit2 = str(input("Name your 2nd character:"))
+                finalPlayers = player1unit1,player1unit2
+                userTeam.append (finalPlayers)
+                
         elif numberOfUnits==3:
                 print ("Choose units for your team")
                 print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
@@ -83,6 +90,9 @@ if chosenMenu=="N":
                     else:
                         player1unit3 = "Mage"
                 player1unit3 = str(input("Name your 3rd character:"))
+                finalPlayers = player1unit1,player1unit2,player1unit3
+                userTeam.append (finalPlayers)
+
         elif numberOfUnits==4:
                 print ("Choose units for your team")
                 print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
@@ -122,6 +132,9 @@ if chosenMenu=="N":
                     else:
                         player1unit4 = "Mage"
                 player1unit4 = str(input("Name your 4th character:"))
+                finalPlayers = player1unit1,player1unit2,player1unit3,player1unit4
+                userTeam.append (finalPlayers)
+                
         elif numberOfUnits==5:
                 print ("Choose units for your team")
                 print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
@@ -170,6 +183,8 @@ if chosenMenu=="N":
                     else:
                         player1unit5 = "Mage"
                 player1unit5 = str(input("Name your 5th character:"))
+                finalPlayers = player1unit1,player1unit2,player1unit3,player1unit4, player1unit5
+                userTeam.append (finalPlayers)
 
 #elif chosenMenu=="R":
 elif chosenMenu=="H":
@@ -179,12 +194,11 @@ elif chosenMenu=="H":
 else:
     print ("Exit game")
 
-# Player Team VS AI Team
-#         Player Team:
-#             (Display Player 1 Team)
-        
-#         vs
-#         AI Team:
-#             (Display AI Team)
-#              prefix + random numbers (eg AI87 (kind of unit))
-#             Print ("Begin battle!')
+userName = str(input("What is your team's name?:"))
+print (userName,"Team VS AI Team")
+print (userName,"Team Players:")
+print (userTeam)
+print ("VS\nAI Team Players:")
+# print (aiTeam)
+print ("A187 (Troll), A316 (Knight), A214(Mage)")  
+print ("Begin battle!")
