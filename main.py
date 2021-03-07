@@ -1,4 +1,5 @@
 #UI/UX
+import json
 
 #INTRODUCE PSB BATTLE GAME TO USER
 print ("WELCOME TO PSB BATTLE GAME")
@@ -29,7 +30,17 @@ if chosenMenu=="N":
                     if characterOne=="T":
                         player1unit1 = "Troll"
                     elif characterOne=="K":
-                        player1unit1 = "Knight"
+                        # player1unit1 = "Knight"
+                        knightFile = open("init/knight.json", "r")
+                        knightJson = knightFile.read()
+                        knight = json.loads(knightJson)
+                        knight["name"] = str(input("Name your character:"))
+                        configFile = open("config.json","r")
+                        configJson = configFile.read()
+                        config = json.loads(configJson)
+                        config["player_one"]["team"].append(knight)
+                        with open('config.json','w') as outfile:
+                            json.dump(config, outfile)
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your character:"))
