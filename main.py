@@ -13,7 +13,7 @@ print ("""[N]ew Game
 
 chosenMenu = str(input("Choose menu option: "))
 userTeam = []
-if chosenMenu=="N":
+if chosenMenu=="N".lower():
     print ("Choose your game mode:")
     print ("[1] Player vs AI")
     print ("[2] Player vs Player")
@@ -218,7 +218,7 @@ if chosenMenu=="N":
                 userTeam.append (finalPlayers)
 
 #elif chosenMenu=="R":
-elif chosenMenu=="H":
+elif chosenMenu=="H".lower():
         f = open("how_to_play.txt", "r")
         print(f.read())
         f.close()
