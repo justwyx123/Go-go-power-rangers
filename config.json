@@ -1,7 +1,12 @@
 {
     "game_mode":"player_vs_ai",
     "turn":1,
-    "player_one_team":{},
-    "player_two_team":{},
-    "ai_team":{}
+    "player_one":{
+        "type":"human",
+        "team":[]
+    },
+    "player_two":{
+        "type":"ai",
+        "team":[]
+    }
 }

@@ -48,6 +48,8 @@ if chosenMenu=="N":
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your 1st character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterTwo = str(input("Enter 2nd character:"))
                 def playerOne(characterTwo):
                     if characterTwo=="T":
@@ -72,6 +74,8 @@ if chosenMenu=="N":
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your 1st character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterTwo = str(input("Enter 2nd character:"))
                 def playerOne(characterTwo):
                     if characterTwo=="T":
@@ -81,6 +85,8 @@ if chosenMenu=="N":
                     else:
                         player1unit2 = "Mage"
                 player1unit2 = str(input("Name your 2nd character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterThree = str(input("Enter 3rd character:"))
                 def playerOne(characterThree):
                     if characterThree=="T":
@@ -105,6 +111,8 @@ if chosenMenu=="N":
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your 1st character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterTwo = str(input("Enter 2nd character:"))
                 def playerOne(characterTwo):
                     if characterTwo=="T":
@@ -114,6 +122,8 @@ if chosenMenu=="N":
                     else:
                         player1unit2 = "Mage"
                 player1unit2 = str(input("Name your 2nd character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterThree = str(input("Enter 3rd character:"))
                 def playerOne(characterThree):
                     if characterThree=="T":
@@ -123,6 +133,8 @@ if chosenMenu=="N":
                     else:
                         player1unit3 = "Mage"
                 player1unit3 = str(input("Name your 3rd character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterFour = str(input("Enter 4th character:"))
                 def playerOne(characterFour):
                     if characterFour=="T":
@@ -147,6 +159,8 @@ if chosenMenu=="N":
                     else:
                         player1unit1 = "Mage"
                 player1unit1 = str(input("Name your 1st character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterTwo = str(input("Enter 2nd character:"))
                 def playerOne(characterTwo):
                     if characterTwo=="T":
@@ -156,6 +170,8 @@ if chosenMenu=="N":
                     else:
                         player1unit2 = "Mage"
                 player1unit2 = str(input("Name your 2nd character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterThree = str(input("Enter 3rd character:"))
                 def playerOne(characterThree):
                     if characterThree=="T":
@@ -165,6 +181,8 @@ if chosenMenu=="N":
                     else:
                         player1unit3 = "Mage"
                 player1unit3 = str(input("Name your 3rd character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterFour = str(input("Enter 4th character:"))
                 def playerOne(characterFour):
                     if characterFour=="T":
@@ -174,6 +192,8 @@ if chosenMenu=="N":
                     else:
                         player1unit4 = "Mage"
                 player1unit4 = str(input("Name your 4th character:"))
+                print ("Choose units for your team")
+                print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
                 characterFive = str(input("Enter 5th character:"))
                 def playerOne(characterFive):
                     if characterFive=="T":
@@ -202,3 +222,5 @@ print ("VS\nAI Team Players:")
 # print (aiTeam)
 print ("A187 (Troll), A316 (Knight), A214(Mage)")  
 print ("Begin battle!")
+
+#Battle Proper
