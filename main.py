@@ -224,11 +224,26 @@ while True:
             print(f.read())
             f.close()
     elif chosenMenu.lower() == 'e':
-        print ("Exit game")
-        exit()
+        confirmation=input("Are your sure?(Y/N):")
+        if confirmation.lower() == 'y':
+            print ("Exit Game")
+            exit()
+        else:
+            print ("Menu")
+            print ("""[N]ew Game
+[R]esume Game
+[H]ow to Play
+[E]xit Game""")
+            continue
+        
 
     else:
         print ("Invalid Input. Please try again")
+        print ("Menu")
+        print ("""[N]ew Game
+[R]esume Game
+[H]ow to Play
+[E]xit Game""")
 
 
 
