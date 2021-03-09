@@ -5,11 +5,8 @@ from sys import exit
 print ("WELCOME TO PSB BATTLE GAME")
 str(input("Press enter to proceed"))
 
-print ("Menu")
-print ("""[N]ew Game
-[R]esume Game
-[H]ow to Play
-[E]xit Game""")
+Menu=("Menu \n[N]ew Game \n[R]esume Game \n[H]ow to Play \n[E]xit Game")
+print (Menu)
 
 while True:
     chosenMenu = str(input("Choose menu option: "))
@@ -223,27 +220,21 @@ while True:
             f = open("how_to_play.txt", "r")
             print(f.read())
             f.close()
+            print (Menu)
+            
     elif chosenMenu.lower() == 'e':
         confirmation=input("Are your sure?(Y/N):")
         if confirmation.lower() == 'y':
             print ("Exit Game")
             exit()
         else:
-            print ("Menu")
-            print ("""[N]ew Game
-[R]esume Game
-[H]ow to Play
-[E]xit Game""")
+            print (Menu)
             continue
         
 
     else:
         print ("Invalid Input. Please try again")
-        print ("Menu")
-        print ("""[N]ew Game
-[R]esume Game
-[H]ow to Play
-[E]xit Game""")
+        print (Menu)
 
 
 
