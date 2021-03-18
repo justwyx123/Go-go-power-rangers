@@ -196,9 +196,9 @@ else:
 
 # #Battle Proper
 
-1. Make function to create random characters (AI) (Yong Xiang)
-2. Ensure that program accepts both lower and uppercase. If not repeat input (Yong Xiang)
+# 1. Make function to create random characters (AI) (Yong Xiang)
+# 2. Ensure that program accepts both lower and uppercase. If not repeat input (Yong Xiang)
 
-3. Battle phase (3)
+# 3. Battle phase (Henry, Parthi, Shun Yong)
 
-Deadline Saturday Night
+# Deadline Saturday Night
