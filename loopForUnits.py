@@ -16,7 +16,6 @@ def playerOneCharacters (playerOneNumberOfUnits):
         count = count + 1
     
 
-
 playerOneCharacters (playerOneNumberOfUnits)
 
 print (list(playerOneListOfUnits))
