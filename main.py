@@ -44,29 +44,12 @@ playerOneCharacters (playerOneNumberOfUnits)
 
 print (playerOneListOfUnits)
 
-
-
-
         gameMode == 2 #Player vs player
         print ("Build your team!")
         print ("1 unit\n2 units\n3 units\n4 units\n5 units")
         numberOfUnits = int(input("How many units in your team?:"))
         
-        Player 1 create your team
 
-        create loop to make a list of objects of character class and Name. 
-        Append sa list for 
-
-        player1 = [{"character_class":"troll", "character_name":"Karen"}, {"character_class":"troll", "character_name":"Joy"}]
-        createCharacter (player1)
-
-        create loop to make a list of objects of character class and Name. 
-        Append sa list for 
-        player2 = 
-        createCharacter (player2)
-
-1. Create a loop asking user to input class (T,K,M) and Name (Enter name)
-2. Create an array of object (dictionary class, name)
 
 
 input = [{"character_class":"troll", "character_name":"Karen"}, ]
