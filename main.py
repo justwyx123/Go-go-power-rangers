@@ -21,10 +21,11 @@ def playerOneCharacters (playerOneNumberOfUnits):
         print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
         characterClassInput = str(input("Enter chosen character:"))
         characterNameInput = str(input("Enter character's name:"))
-        localplayerOneListOfUnits = {"character_class":[characterClassInput], "character_name":[characterNameInput]}
+        localplayerOneListOfUnits = {"character_class":characterClassInput, "character_name":characterNameInput}
         playerOneListOfUnits.append(localplayerOneListOfUnits)
         count = count + 1
 
+#For List of Units of playerTwo
 def playerTwoCharacters (playerTwoNumberOfUnits):
     count = 0
     while count < playerTwoNumberOfUnits :
@@ -33,9 +34,82 @@ def playerTwoCharacters (playerTwoNumberOfUnits):
         print ("""[T]roll - A strong attack but careless monster that has 50% chance of missing its target\n[K]night - A soldier with decent attack and strong defence\n[M]age - A spell caster with low attack/defence""")
         characterClassInput = str(input("Enter chosen character:"))
         characterNameInput = str(input("Enter character's name:"))
-        localplayerTwoListOfUnits = {"character_class":[characterClassInput], "character_name":[characterNameInput]}
+        localplayerTwoListOfUnits = {"character_class":characterClassInput, "character_name":characterNameInput}
         playerTwoListOfUnits.append(localplayerTwoListOfUnits)
         count = count + 1
+
+#To config units to JSON
+def configOneUnits(playerOneListOfUnits):
+    for unit in playerOneListOfUnits:
+        if (unit["character_class"]) == "T":
+            trollFile = open("init/troll.json", "r")
+            trollJson = trollFile.read()
+            troll = json.loads(trollJson)
+            troll["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_one"]["team"].append(troll)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
+        elif (unit["character_class"]) == "K":
+            knightFile = open("init/knight.json", "r")
+            knightJson = knightFile.read()
+            knight = json.loads(knightJson)
+            knight["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_one"]["team"].append(knight)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
+        elif (unit["character_class"]) == "M":
+            mageFile = open("init/mage.json", "r")
+            mageJson = mageFile.read()
+            mage = json.loads(mageJson)
+            mage["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_one"]["team"].append(mage)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
+
+def configTwoUnits(playerTwoListOfUnits):
+    for unit in playerOneListOfUnits:
+        if (unit["character_class"]) == "T":
+            trollFile = open("init/troll.json", "r")
+            trollJson = trollFile.read()
+            troll = json.loads(trollJson)
+            troll["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_two"]["team"].append(troll)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
+        elif (unit["character_class"]) == "K":
+            knightFile = open("init/knight.json", "r")
+            knightJson = knightFile.read()
+            knight = json.loads(knightJson)
+            knight["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_two"]["team"].append(knight)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
+        elif (unit["character_class"]) == "M":
+            mageFile = open("init/mage.json", "r")
+            mageJson = mageFile.read()
+            mage = json.loads(mageJson)
+            mage["name"] = unit["character_name"]
+            configFile = open("config.json","r")
+            configJson = configFile.read()
+            config = json.loads(configJson)
+            config["player_two"]["team"].append(mage)
+            with open('config.json','w') as outfile:
+                json.dump(config, outfile)
 
 #AI Team
 # def generateRandomPlayers(playerOneNumberOfUnits):
@@ -69,13 +143,14 @@ while True:
             print (playerOneName, "build your team!")
             print ("1 unit\n2 units\n3 units\n4 units\n5 units")
             playerOneNumberOfUnits = int(input("How many units in your team?:"))
-            playerOneCharacters (playerOneNumberOfUnits)
-            print (playerOneName,"battle unit:")
+            playerOneCharacters (playerOneNumberOfUnits)            
+            print (playerOneName+"\'s"," Team:")
             print (list(playerOneListOfUnits))
             #AI
             print ("VS")
             # def generateRandomPlayers(playerOneNumberOfUnits):
-            # print (AI TEAM)
+            print ("AI TEAM")
+            configOneUnits(playerOneListOfUnits)
 
         elif gameMode == 2: #Player1 vs Player2
             #PLAYER 1
@@ -85,8 +160,9 @@ while True:
             print ("1 unit\n2 units\n3 units\n4 units\n5 units")
             playerOneNumberOfUnits = int(input("How many units in your team?:"))
             playerOneCharacters (playerOneNumberOfUnits)
-            print (playerOneName,"battle unit:")
+            print (playerOneName+"\'s"," Team:")
             print (list(playerOneListOfUnits))
+            configOneUnits(playerOneListOfUnits)
 
             #PLAYER 2
             playerTwoName = str(input("Player 2's name:"))
@@ -95,77 +171,34 @@ while True:
             print ("1 unit\n2 units\n3 units\n4 units\n5 units")
             playerTwoNumberOfUnits = int(input("How many units in your team?:"))
             playerTwoCharacters (playerTwoNumberOfUnits)
-            print (playerTwoName,"battle unit:")
+            print (playerTwoName +"\'s"," Team:")
             print (list(playerTwoListOfUnits))
+            configTwoUnits(playerTwoListOfUnits)
         
-
-
-# input = [{"character_class":"troll", "character_name":"Karen"}, ]
-
-# def createCharacter (characterList):
-#     for x in len(characterList):
-#         if character class is troll 
-#         pull troll.json
-#         trollFile = open("init/troll.json", "r")
-#         trollJson = trollFile.read()
-#         troll = json.loads(trollJson)
-#         troll["name"] = str(input("Name your character:"))
-#         configFile = open("config.json","r")
-#         configJson = configFile.read()
-#         config = json.loads(configJson)
-#         config["player_one"]["team"].append(troll)
-#         with open('config.json','w') as outfile:
-#             json.dump(config, outfile)
-#         elif 
-
-# answer = createCharacter(player1)
-
-
-# trollFile = open("init/troll.json", "r")
-# trollJson = trollFile.read()
-# troll = json.loads(trollJson)
-# troll["name"] = str(input("Name your character:"))
-# configFile = open("config.json","r")
-# configJson = configFile.read()
-# config = json.loads(configJson)
-# config["player_one"]["team"].append(troll)
-# with open('config.json','w') as outfile:
-#     json.dump(config, outfile)
-
-# # userName = str(input("What is your team's name?:"))
-# # print (userName,"Team VS AI Team")
-# # print (userName,"Team Players:")
-# # print (userTeam)
-# # print ("VS\nAI Team Players:")
-# # # print (aiTeam)
-# # print ("A187 (Troll), A316 (Knight), A214(Mage)")  
-# # print ("Begin battle!")
-
-# # #Battle Proper
-#     elif chosenMenu.lower() == 'h':
-#             f = open("how_to_play.txt", "r")
-#             print(f.read())
-#             f.close()
-#             print (Menu)
+    elif chosenMenu.lower() == 'h':
+            f = open("how_to_play.txt", "r")
+            print(f.read())
+            f.close()
+            print (Menu)
             
-#     elif chosenMenu.lower() == 'e':
-#         confirmation=input("Are your sure?(Y/N):")
-#         if confirmation.lower() == 'y':
-#             print ("Exit Game")
-#             exit()
-#         else:
-#             print (Menu)
-#             continue
-#   else:
-#         print ("Invalid Input. Please try again")
-#         print (Menu)
+    elif chosenMenu.lower() == 'e':
+        confirmation=input("Are your sure?(Y/N):")
+        if confirmation.lower() == 'y':
+            print ("Exit Game")
+            exit()
+        else:
+            print (Menu)
+            continue
+else:
+    print ("Invalid Input. Please try again")
+    print (Menu)
 
-# userName = str(input("What is your team's name?:"))
-# print (userName,"Team VS AI Team")
-# print (userName,"Team Players:")
-# print ("VS\nAI Team Players:")
-# # print (aiTeam)
-# print ("A187 (Troll), A316 (Knight), A214(Mage)")  
-# print ("Begin battle!")
 
-# # #Battle Proper
+# #Battle Proper
+
+1. Make function to create random characters (AI) (Yong Xiang)
+2. Ensure that program accepts both lower and uppercase. If not repeat input (Yong Xiang)
+
+3. Battle phase (3)
+
+Deadline Saturday Night
