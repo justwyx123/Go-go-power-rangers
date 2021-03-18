@@ -34,7 +34,6 @@ playerOneNumberOfUnits = int(input("How many units in your team?:"))
 playerOneListOfUnits = {"character_class":[], "character_name":[]}
 
 
-
 def playerOneCharacters (playerOneNumberOfUnits):
     count = 0
     
@@ -58,7 +57,7 @@ def playerOneCharacters (playerOneNumberOfUnits):
             playerOneExtendedCharacters["character_name"].append(characterNameInput)
             finalListOFPlayerOneUnits = {**playerOneListOfUnits,**playerOneExtendedCharacters}
             count = count + 1
-            print(count)
+            print ("Player 1 Unit:")
             print (finalListOFPlayerOneUnits)
 
 playerOneCharacters (playerOneNumberOfUnits)
