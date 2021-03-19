@@ -5,6 +5,7 @@ import json
 #Lists used in the game
 playerOneListOfUnits = []
 playerTwoListOfUnits = []
+AIListOfUnits = []
 playerOne = []
 playerTwo = []
 #######END OF LIST#######
@@ -37,6 +38,7 @@ def playerTwoCharacters (playerTwoNumberOfUnits):
         localplayerTwoListOfUnits = {"character_class":characterClassInput, "character_name":characterNameInput}
         playerTwoListOfUnits.append(localplayerTwoListOfUnits)
         count = count + 1
+
 
 #To config units to JSON
 def configOneUnits(playerOneListOfUnits):
@@ -112,7 +114,21 @@ def configTwoUnits(playerTwoListOfUnits):
                 json.dump(config, outfile)
 
 #AI Team
-# def generateRandomPlayers(playerOneNumberOfUnits):
+def generateRandomPlayers(playerOneNumberOfUnits):
+    import random
+    unitlist=['Troll', 'Knight', 'Mage']
+    for unit in range(1,playerOneNumberOfUnits+1):
+        AIunit=random.choice(unitlist)
+        print (AIunit)
+        if AIunit=='Troll':
+            AIunit='T'
+        elif AIunit=='Knight':
+            AIunit='K'
+        elif AIunit=='Mage':
+            AIunit='M'
+
+    AIListOfUnits.append(AIunit)
+    
 
 #######END OF FUNCTIONS#######
 
@@ -148,8 +164,10 @@ while True:
             print (list(playerOneListOfUnits))
             #AI
             print ("VS")
-            # def generateRandomPlayers(playerOneNumberOfUnits):
             print ("AI TEAM")
+            generateRandomPlayers(playerOneNumberOfUnits)
+            print (list(AIListOfUnits))
+            
             configOneUnits(playerOneListOfUnits)
 
         elif gameMode == 2: #Player1 vs Player2
@@ -187,11 +205,9 @@ while True:
             print ("Exit Game")
             exit()
         else:
+            print ("Invalid Input. Please try again")
             print (Menu)
             continue
-else:
-    print ("Invalid Input. Please try again")
-    print (Menu)
 
 
 # #Battle Proper
